@@ -4,15 +4,32 @@ const app=express();
 const PORT = 3001;
 
 app.get('/account', async (req, res) => {
-    console.log('this is account')
-    const response= await axios.get('http://localhost:3002/product')
-    console.log(response.data)
-    res.send({
-        'data':response.data
-    })
-    // res.send({
-    //     'info': 'This is account server'
-    // })
+
+//     res.send({
+//         'data': 'This is account server',
+//         'info': 'I am coming from account server'
+// })
+
+res.send(
+    [
+  {
+    "accountId": "A1001",
+    "name": "Rohit Kumar Debnath",
+    "email": "rohit@example.com",
+    "password": "hashed_password_123",
+    "createdAt": "2025-07-10T12:00:00Z"
+  },
+  {
+    "accountId": "A1002",
+    "name": "Jane Doe",
+    "email": "jane@example.com",
+    "password": "hashed_password_456",
+    "createdAt": "2025-07-09T08:30:00Z"
+  }
+]
+
+)
+   
 });
 
 app.listen(PORT,()=>{
