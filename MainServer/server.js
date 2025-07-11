@@ -5,14 +5,14 @@ const PORT = 3000;
 
 app.get('/MainServer', async (req, res) => {
     console.log('this is Main Server')
-    const acc= await axios.get('http://localhost:3001/account')
+    const acc= await axios.get('http://localhost:3001/account');
     console.log(acc.data)
  
-    const prod= await axios.get('http://localhost:3002/product')
+    const prod= await axios.get('http://localhost:3002/product');
     console.log(prod.data)
-    const ord= await axios.get('http://localhost:3003/orders')
+    const ord= await axios.get('http://localhost:3003/orders');
     console.log(ord.data)
-    const cart= await axios.get('http://localhost:3004/cart')
+    const cart= await axios.get('http://localhost:3004/cart');
     console.log(cart.data)
     res.send({
         'data': 'This datas are fetched succesfully is Main server',
